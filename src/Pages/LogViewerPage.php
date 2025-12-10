@@ -98,7 +98,7 @@ class LogViewerPage extends Page implements HasForms, HasActions
             return '';
         }
 
-        return File::get($this->logFile);
+        return mb_convert_encoding(File::get($this->logFile), 'UTF-8', 'UTF-8');
     }
 
     public function clear(): void
